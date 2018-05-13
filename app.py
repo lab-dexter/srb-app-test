@@ -14,7 +14,7 @@ db = MySQLdb.connect(host=dbhost,
 
 cur = db.cursor()
 
-cur.execute("SELECT * FROM `00-00-00-00-00-00_1`")
+cur.execute("SELECT * FROM `sensor_data`")
 
 for row in cur.fetchall():
   print("{} {} {}".format(row[0], row[1], row[2]))
