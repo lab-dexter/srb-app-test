@@ -1,9 +1,16 @@
 import MySQLdb
+import os
 
-db = MySQLdb.connect(host="127.0.0.1",
-                     user="remote-admin",
-                     passwd="Some-pass!23",
-                     db="smart-recycling-bins")
+user = os.environ["MYSQL_USER"]
+passwd = os.environ["MYSQL_PASSWORD"]
+dbhost = os.environ["MYSQL_SERVICE_HOST"]
+dbname = os.environ["MYSQL_DATABASE"]
+
+db = MySQLdb.connect(host=dbhost,
+                     user=user,
+                     passwd=passwd,
+                     db=dbname)
+
 
 cur = db.cursor()
 
