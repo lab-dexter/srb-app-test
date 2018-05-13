@@ -17,4 +17,4 @@ cur = db.cursor()
 cur.execute("SELECT * FROM `00-00-00-00-00-00_1`")
 
 for row in cur.fetchall():
-  print row[0], " ", row[1], " ", row[2]
+  print("{} {} {}".format(row[0], row[1], row[2]))
